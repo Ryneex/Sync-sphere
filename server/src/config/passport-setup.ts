@@ -14,17 +14,7 @@ passport.use(
     {
       clientID: GOOGLE_CLIENT_ID!,
       clientSecret: GOOGLE_CLIENT_SECRET!,
-      callbackURL:
-        // process.env.NODE_ENV === "production"
-        //   ?
-        "https://sync-spheree.onrender.com/api/v1/auth/google/callback",
-      // callbackUrl,
-      //   :
-      // "http://localhost:3000/api/v1/auth/google/callback",
-      // // callbackUrl,
-      // process.env.NODE_ENV === "production"
-      //   ? `${PROD_FRONTEND_URL}/api/v1/auth/google/callback`
-      //   : `${FRONTEND_URL}/api/v1/auth/google/callback`,
+      callbackURL: `${process.env.API_DOMAIN}/api/v1/auth/google/callback`,
     },
     async (accessToken, refreshToken, profile, done) => {
       const {

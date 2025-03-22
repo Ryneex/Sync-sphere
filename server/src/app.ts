@@ -15,8 +15,7 @@ const app: Express = express();
 
 app.use(
   cors({
-    // origin: NODE_ENV === "production" ? PROD_FRONTEND_URL : FRONTEND_URL,
-    origin: "https://sync-sphere-eight.vercel.app",
+    origin: NODE_ENV === "production" ? PROD_FRONTEND_URL : FRONTEND_URL,
 
     credentials: true,
     // methods: ["GET", "PUT", "POST", "DELETE", "OPTIONS"],
